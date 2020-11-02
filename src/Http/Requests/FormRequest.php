@@ -5,7 +5,7 @@ namespace Nodes\Http\Requests;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest as IlluminateFormRequest;
 use Illuminate\Http\JsonResponse;
-use Nodes\Validation\Exceptions\ValidationException;
+use Weatherbys\Validation\Exceptions\ValidationException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 /**

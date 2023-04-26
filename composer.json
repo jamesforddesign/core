@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "illuminate/support": ">=5.2.0 <6.15.0",
+        "illuminate/support": "^9.0",
         "symfony/http-kernel": "v6.1.9",
         "browscap/browscap-php": "7.1.0"
     },

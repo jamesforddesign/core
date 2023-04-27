@@ -108,14 +108,14 @@ class Meta
 
         // Parse platform
         if (!isset($headerArr[0]) || !in_array($headerArr[0], $this->platforms)) {
-            throw new BadRequestException('Platform is not supported, should be: '.implode(',', $this->platforms));
+            throw new BadRequestException('Platform is not supported, should be: ' . implode(',', $this->platforms));
         }
 
         $this->platform = $headerArr[0];
 
         // Parse env
         if (!isset($headerArr[1]) || !in_array($headerArr[1], $this->environments)) {
-            throw new BadRequestException('Environment is not supported, should be: '.implode(',', $this->environments));
+            throw new BadRequestException('Environment is not supported, should be: ' . implode(',', $this->environments));
         }
 
         $this->environment = $headerArr[1];

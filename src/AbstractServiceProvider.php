@@ -8,6 +8,7 @@ use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 use League\Flysystem\Adapter\Local as LocalAdapter;
 use League\Flysystem\Filesystem as Flysystem;
+use League\Flysystem\Local\LocalFilesystemAdapter;
 use League\Flysystem\MountManager;
 use Nodes\Exceptions\InstallPackageException;
 use Nodes\Support\InstallPackage as NodesInstaller;
@@ -430,8 +431,12 @@ abstract class AbstractServiceProvider extends IlluminateServiceProvider
 
         // Output status message
         $this->getCommand()->line(
-            sprintf('<info>Copied %s</info> <comment>[%s]</comment> <info>To</info> <comment>[%s]</comment>',
-                'File', str_replace(base_path(), '', realpath($from)), str_replace(base_path(), '', realpath($to)))
+            sprintf(
+                '<info>Copied %s</info> <comment>[%s]</comment> <info>To</info> <comment>[%s]</comment>',
+                'File',
+                str_replace(base_path(), '', realpath($from)),
+                str_replace(base_path(), '', realpath($to))
+            )
         );
     }
 
@@ -449,8 +454,8 @@ abstract class AbstractServiceProvider extends IlluminateServiceProvider
     {
         // Load mount manager
         $manager = new MountManager([
-            'from' => new Flysystem(new LocalAdapter($from)),
-            'to'   => new Flysystem(new LocalAdapter($to)),
+            'from' => new Flysystem(new LocalFilesystemAdapter($from)),
+            'to'   => new Flysystem(new LocalFilesystemAdapter($to)),
         ]);
 
         // Copy directory to application
@@ -463,8 +468,12 @@ abstract class AbstractServiceProvider extends IlluminateServiceProvider
 
         // Output status message
         $this->getCommand()->line(
-            sprintf('<info>Copied %s</info> <comment>[%s]</comment> <info>To</info> <comment>[%s]</comment>',
-                'Directory', str_replace(base_path(), '', realpath($from)), str_replace(base_path(), '', realpath($to)))
+            sprintf(
+                '<info>Copied %s</info> <comment>[%s]</comment> <info>To</info> <comment>[%s]</comment>',
+                'Directory',
+                str_replace(base_path(), '', realpath($from)),
+                str_replace(base_path(), '', realpath($to))
+            )
         );
     }
 

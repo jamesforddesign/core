@@ -255,7 +255,7 @@ class Exception extends CoreException implements HttpExceptionInterface
      *
      * @return int
      */
-    public function getStatusCode() :int
+    public function getStatusCode(): int
     {
         return (int) $this->statusCode;
     }
@@ -314,7 +314,7 @@ class Exception extends CoreException implements HttpExceptionInterface
      *
      * @return array
      */
-    public function getHeaders()
+    public function getHeaders(): array
     {
         return (array) $this->headers;
     }

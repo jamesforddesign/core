@@ -99,7 +99,7 @@ if (!function_exists('add_to_autoload_config')) {
 
                 // Insert path at current line
                 array_splice($autoloadConfig, $i, 0, [
-                    str_repeat(' ', 4).$path.",\n",
+                    str_repeat(' ', 4) . $path . ",\n",
                 ]);
                 break;
             }
@@ -133,8 +133,10 @@ if (!function_exists('add_to_composer_autoload')) {
         $composerFile = json_decode(file_get_contents($composerFilePath));
 
         // Make sure value doesn't already exists
-        if ((!is_null($key) && array_key_exists($key, $composerFile->autoload->{$section})) ||
-            in_array($value, $composerFile->autoload->{$section})) {
+        if (
+            (!is_null($key) && array_key_exists($key, $composerFile->autoload->{$section})) ||
+            in_array($value, $composerFile->autoload->{$section})
+        ) {
             return;
         }
 

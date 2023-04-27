@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Request;
+
 if (!function_exists('headers')) {
     /**
      * Retrieve one or more headers from request.
@@ -15,7 +17,7 @@ if (!function_exists('headers')) {
     function headers(array $keys = [])
     {
         // Retrieve all request headers
-        $requestHeaders = \Request::header();
+        $requestHeaders = Request::header();
 
         // Convert all values to lowercase
         $keys = array_map('strtolower', $keys);

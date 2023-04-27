@@ -31,16 +31,16 @@ if (!function_exists('load_directory')) {
         foreach ($directory as $item) {
             // If item is a directory and recursive is false.
             // We'll simply skip the directory and move on.
-            if (is_dir($path.$item) && !$recursive) {
+            if (is_dir($path . $item) && !$recursive) {
                 continue;
             }
 
-            if (is_dir($path.$item)) {
+            if (is_dir($path . $item)) {
                 // Load directory
-                load_directory($path.$item.'/');
+                load_directory($path . $item . '/');
             } else {
                 // Load file
-                include $path.$item;
+                include $path . $item;
             }
         }
 

@@ -20,7 +20,7 @@
     "require": {
         "laravel/framework": "^11.0",
         "illuminate/support": "^11.0",
-        "symfony/http-kernel": "v6.2.6",
+        "symfony/http-kernel": "^7.0",
         "browscap/browscap-php": "^7.1",
         "illuminate/console": "^11.0",
         "illuminate/filesystem": "^11.0",
